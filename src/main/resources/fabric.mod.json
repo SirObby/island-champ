@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "id": "modid",
+  "id": "islandchamp",
   "version": "${version}",
 
   "name": "Island Champ",
@@ -19,11 +19,11 @@
   "environment": "*",
   "entrypoints": {
     "main": [
-      "net.fabricmc.example.ExampleMod"
+      "net.sirobby.mods.islandchamp.IslandChamp"
     ]
   },
   "mixins": [
-    "modid.mixins.json"
+    "islandchamp.mixins.json"
   ],
 
   "depends": {
