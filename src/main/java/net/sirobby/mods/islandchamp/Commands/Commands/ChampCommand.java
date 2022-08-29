@@ -17,12 +17,25 @@ public class ChampCommand implements Command {
         dispatcher.register(
                 ClientCommandManager.literal("champ").executes(
                         ctx -> {
-                            ChatUtil.snedMessage("Enabling the mod Island Champ.");
-                            IslandChamp.mod_enabled = true;
-                            try {
-                                ClothConfig.saveConfigs();
-                            } catch (IOException e) {
-                                throw new RuntimeException(e);
+                            if (!IslandChamp.mod_enabled) {
+
+                                ChatUtil.snedMessage("Enabling the mod Island Champ.");
+                                IslandChamp.mod_enabled = true;
+                                try {
+                                    ClothConfig.saveConfigs();
+                                } catch (IOException e) {
+                                    throw new RuntimeException(e);
+                                }
+                                return 0;
+                            }
+                            else {
+                                ChatUtil.snedMessage("Disabling the mod Island Champ.");
+                                IslandChamp.mod_enabled = false;
+                                try {
+                                    ClothConfig.saveConfigs();
+                                } catch (IOException e) {
+                                    throw new RuntimeException(e);
+                                }
                             }
                             return 0;
                         }
