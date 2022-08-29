@@ -14,12 +14,15 @@
   },
 
   "license": "CC0-1.0",
-  "icon": "assets/modid/icon.png",
+  "icon": "assets/islandchamp/icon.png",
 
   "environment": "*",
   "entrypoints": {
     "main": [
       "net.sirobby.mods.islandchamp.IslandChamp"
+    ],
+    "modmenu": [
+      "net.sirobby.mods.islandchamp.Configs.ModMenu"
     ]
   },
   "mixins": [

@@ -1,0 +1,9 @@
+{
+  "title.islandchamp.config": "Island Champ title.",
+
+  "category.islandchamp.general": "General Category",
+
+  "option.islandchamp.enabled": "Enable Island Champ",
+
+  "tooltip.islandchamp.enabled": "Enables and/or disables the entire mod, bypasses other options."
+}
