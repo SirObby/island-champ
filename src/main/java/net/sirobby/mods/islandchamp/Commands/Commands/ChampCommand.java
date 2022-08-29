@@ -19,7 +19,7 @@ public class ChampCommand implements Command {
                         ctx -> {
                             if (!IslandChamp.mod_enabled) {
 
-                                ChatUtil.snedMessage("Enabling the mod Island Champ.");
+                                ChatUtil.snedMessage("§aEnabling the mod Island Champ.");
                                 IslandChamp.mod_enabled = true;
                                 try {
                                     ClothConfig.saveConfigs();
@@ -29,7 +29,7 @@ public class ChampCommand implements Command {
                                 return 0;
                             }
                             else {
-                                ChatUtil.snedMessage("Disabling the mod Island Champ.");
+                                ChatUtil.snedMessage("§cDisabling the mod Island Champ.");
                                 IslandChamp.mod_enabled = false;
                                 try {
                                     ClothConfig.saveConfigs();
