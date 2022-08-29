@@ -36,12 +36,11 @@ public class IslandChamp implements ModInitializer {
 		try {
 			Path p = FabricLoader.getInstance().getConfigDir().resolve("islandchamp.json");
 
-
 			String c = Files.readString(p);
 
 			JsonObject jsonObject = new Gson().fromJson(c, JsonObject.class);
 
-			if(!jsonObject.isJsonObject()) {
+			if(!Files.exists(p)){
 				// Set default settings
 
 				mod_enabled = true;

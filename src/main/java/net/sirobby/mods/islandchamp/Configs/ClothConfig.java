@@ -66,4 +66,12 @@ public class ClothConfig {
 
     } // Loading is done from IslandChamp.java
 
+    public static void defaultConfigs() throws IOException {
+        Path p = FabricLoader.getInstance().getConfigDir().resolve("islandchamp.json");
+
+        JsonObject object = new Gson().fromJson(String.format("{ \"enabled\": %s}", true ), JsonObject.class);
+
+        Files.writeString(p, object.toString());
+    }
+
 }
