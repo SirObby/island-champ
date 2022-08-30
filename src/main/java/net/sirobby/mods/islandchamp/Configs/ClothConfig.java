@@ -57,6 +57,12 @@ public class ClothConfig {
                 .setSaveConsumer(newValue -> IslandChamp.sidechat_x = newValue) // Recommended: Called when user save the config
                 .build()); // Builds the option entry for cloth config
 
+        general.addEntry(entryBuilder.startIntSlider(Text.translatable("option.sidechatw.int"), IslandChamp.sidechat_w, 1, 1920)
+                .setDefaultValue(90) // Recommended: Used when user click "Reset"
+                .setTooltip(Text.translatable("tooltip.sidechatw.int")) // Optional: Shown when the user hover over this option
+                .setSaveConsumer(newValue -> IslandChamp.sidechat_w = newValue) // Recommended: Called when user save the config
+                .build()); // Builds the option entry for cloth config
+
         Screen screen = builder.build();
 
         //MinecraftClient.getInstance().setScreen(screen);
@@ -69,7 +75,7 @@ public class ClothConfig {
 
         //String c = Files.readString(p);
 
-        JsonObject object = new Gson().fromJson(String.format("{ \"debugging_enabled\": %s, \"sidechat\": %s, \"sidechat_x\": %d }", IslandChamp.debugging_enabled,  IslandChamp.sidechat_enabled, IslandChamp.sidechat_x), JsonObject.class);
+        JsonObject object = new Gson().fromJson(String.format("{ \"debugging_enabled\": %s, \"sidechat\": %s, \"sidechat_x\": %d, \"sidechat_w\": %d }", IslandChamp.debugging_enabled,  IslandChamp.sidechat_enabled, IslandChamp.sidechat_x, IslandChamp.sidechat_w), JsonObject.class);
 
         Files.writeString(p, object.toString());
 
@@ -78,7 +84,7 @@ public class ClothConfig {
     public static void defaultConfigs() throws IOException {
         Path p = FabricLoader.getInstance().getConfigDir().resolve("islandchamp.json");
 
-        JsonObject object = new Gson().fromJson(String.format("{ \"debugging_enabled\": %s \"sidechat\": %s, \"sidechat_x\": %d }", false, true, 310 ), JsonObject.class);
+        JsonObject object = new Gson().fromJson(String.format("{ \"debugging_enabled\": %s \"sidechat\": %s, \"sidechat_x\": %d, \"sidechat_w\": %d }", false, true, 310, 90 ), JsonObject.class);
 
         Files.writeString(p, object.toString());
     }
