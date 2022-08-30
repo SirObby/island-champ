@@ -44,9 +44,9 @@ public abstract class MixinChatHudListener {
         if(IslandChamp.debugging_enabled) {
             System.out.println(message.toString());
 
-            System.out.println(message.getSiblings().get(0));
-            System.out.println(message.getSiblings().get(1));
-            System.out.println(message.getSiblings().get(2));
+            System.out.println(message.getSiblings().get(0).toString());
+            System.out.println(message.getSiblings().get(1).toString());
+            System.out.println(message.getSiblings().get(2).toString());
         }
 
         /*ChatHudLine.Visible vis = new ChatHudLine.Visible(0, message.asOrderedText(), indicator, true);
