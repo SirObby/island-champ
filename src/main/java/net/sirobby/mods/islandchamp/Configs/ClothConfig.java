@@ -39,8 +39,8 @@ public class ClothConfig {
 
         //boolean currentValue = true;
 
-        general.addEntry(entryBuilder.startBooleanToggle(Text.translatable("option.sidechat.enabled"), IslandChamp.debugging_enabled)
-                .setDefaultValue(false) // Recommended: Used when user click "Reset"
+        general.addEntry(entryBuilder.startBooleanToggle(Text.translatable("option.sidechat.enabled"), IslandChamp.sidechat_enabled)
+                .setDefaultValue(true) // Recommended: Used when user click "Reset"
                 .setTooltip(Text.translatable("tooltip.sidechat.enabled")) // Optional: Shown when the user hover over this option
                 .setSaveConsumer(newValue -> IslandChamp.sidechat_enabled = newValue) // Recommended: Called when user save the config
                 .build()); // Builds the option entry for cloth config
@@ -51,9 +51,9 @@ public class ClothConfig {
                 .setSaveConsumer(newValue -> IslandChamp.debugging_enabled = newValue) // Recommended: Called when user save the config
                 .build()); // Builds the option entry for cloth config
 
-        general.addEntry(entryBuilder.startIntSlider(Text.translatable("option.sidechatx.enabled"), IslandChamp.sidechat_x, 1, 1920)
+        general.addEntry(entryBuilder.startIntSlider(Text.translatable("option.sidechatx.int"), IslandChamp.sidechat_x, 1, 1920)
                 .setDefaultValue(310) // Recommended: Used when user click "Reset"
-                .setTooltip(Text.translatable("tooltip.sidechatx.enabled")) // Optional: Shown when the user hover over this option
+                .setTooltip(Text.translatable("tooltip.sidechatx.int")) // Optional: Shown when the user hover over this option
                 .setSaveConsumer(newValue -> IslandChamp.sidechat_x = newValue) // Recommended: Called when user save the config
                 .build()); // Builds the option entry for cloth config
 
