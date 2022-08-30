@@ -4,6 +4,8 @@
   "category.islandchamp.general": "General Category",
 
   "option.debugging.enabled": "Enable Debugging",
+  "option.sidechat.enabled": "Enable Sidechat",
 
-  "tooltip.debugging.enabled": "Debugging will send logs in your chat about incoming messages, used for development."
+  "tooltip.debugging.enabled": "Debugging will send logs in your chat about incoming messages, used for development.",
+  "tooltip.sidechat.enabled": "Moves direct messages into a sidechat."
 }

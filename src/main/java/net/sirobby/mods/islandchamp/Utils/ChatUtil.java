@@ -4,7 +4,7 @@ import net.minecraft.client.MinecraftClient;
 import net.minecraft.text.Text;
 
 public class ChatUtil {
-    public static void snedMessage(String message) {
+    public static void sendMessage(String message) {
         MinecraftClient.getInstance().player.sendMessage(Text.of(message), false);
     }
 }

@@ -2,11 +2,9 @@ package net.sirobby.mods.islandchamp;
 
 import com.google.gson.Gson;
 import com.google.gson.JsonObject;
-import com.google.gson.JsonParser;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.client.MinecraftClient;
-import net.sirobby.mods.islandchamp.Commands.Command;
 import net.sirobby.mods.islandchamp.Commands.CommandModule;
 import net.sirobby.mods.islandchamp.Configs.ClothConfig;
 import org.slf4j.Logger;
@@ -23,7 +21,10 @@ public class IslandChamp implements ModInitializer {
 	public static final Logger LOGGER = LoggerFactory.getLogger("islandchamp");
 
 	// Settings
-	public static boolean debugging_enabled = true; // Automatic enable.
+	public static boolean debugging_enabled = false; // Automatic disable.
+	public static boolean sidechat_enabled = true; // Automatic enable.
+
+	public static int sidechat_x = 310; // test?
 
 	@Override
 	public void onInitialize() {
@@ -48,6 +49,7 @@ public class IslandChamp implements ModInitializer {
 				ClothConfig.saveConfigs();
 			} else {
 				debugging_enabled = jsonObject.get("debugging_enabled").getAsBoolean();
+				sidechat_x = jsonObject.get("sidechat_x").getAsInt();
 			}
 
 		} catch (IOException e) {

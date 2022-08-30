@@ -5,6 +5,7 @@
 ### Implemented
 
 - Debugging mode (Sends Text components in logs.)
+- Sidechat for PMs
 ### Planned
 
 - Show party members on screen
