@@ -1,12 +1,10 @@
 # Island Champ
 
-This mod might have be **DISABLED** in the configurations, which could be the reason the mod is not working.\
-Running /champ fixes this.
 
 ## Features
 ### Implemented
 
-- 
+- Debugging mode (Sends Text components in logs.)
 ### Planned
 
 - Show party members on screen
