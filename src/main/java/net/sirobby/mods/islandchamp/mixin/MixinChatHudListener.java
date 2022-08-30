@@ -49,9 +49,6 @@ public abstract class MixinChatHudListener {
             System.out.println(message.getSiblings().get(2).toString());
         }
 
-        /*ChatHudLine.Visible vis = new ChatHudLine.Visible(0, message.asOrderedText(), indicator, true);
-
-        visibleMessagesIguess.add(vis);*/
         if(IslandChamp.sidechat_enabled) {
             int i = MathHelper.floor((double) this.getWidth() / this.getChatScale());
             if (indicator != null && indicator.icon() != null) {
@@ -67,7 +64,10 @@ public abstract class MixinChatHudListener {
                         this.scroll(1);
                     }
                     boolean bl2 = j == list.size() - 1;
-                    this.visibleMessagesIguess.add(0, new ChatHudLine.Visible(ticks, orderedText, indicator, bl2));
+                    //this.visibleMessagesIguess.add(0, new ChatHudLine.Visible(ticks, orderedText, indicator, bl2));
+                    ChatHudLine.Visible vis = new ChatHudLine.Visible(0, message.asOrderedText(), indicator, bl2);
+
+                    visibleMessagesIguess.add(vis);
                 }
                 ci.cancel();
             }
