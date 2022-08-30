@@ -57,18 +57,10 @@ public abstract class MixinChatHudListener {
             List<OrderedText> list = ChatMessages.breakRenderedChatMessageLines(message, i, this.client.textRenderer);
             if(/*Objects.equals(message.getStyle().getColor(), TextColor.fromRgb(0xFF7EFF)) && */Objects.equals(message.getSiblings().get(0).getString(), "[PM To] ") || Objects.equals(message.getSiblings().get(0).getString(), "[PM From] ")) {
                 boolean bl = this.isChatFocused();
-                for (int j = 0; j < list.size(); ++j) {
-                    OrderedText orderedText = list.get(j);
-                    if (bl && this.scrolledLines > 0) {
-                        this.hasUnreadNewMessages = true;
-                        this.scroll(1);
-                    }
-                    boolean bl2 = j == list.size() - 1;
-                    //this.visibleMessagesIguess.add(0, new ChatHudLine.Visible(ticks, orderedText, indicator, bl2));
-                    ChatHudLine.Visible vis = new ChatHudLine.Visible(0, message.asOrderedText(), indicator, bl2);
 
-                    visibleMessagesIguess.add(vis);
-                }
+                ChatHudLine.Visible vis = new ChatHudLine.Visible(0, message.asOrderedText(), indicator, bl);
+
+                visibleMessagesIguess.add(vis);
                 ci.cancel();
             }
         }
