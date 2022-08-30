@@ -43,6 +43,10 @@ public abstract class MixinChatHudListener {
     public void onChatMessage(Text message, MessageSignatureData signature, int ticks, MessageIndicator indicator, boolean refresh, CallbackInfo ci) {
         if(IslandChamp.debugging_enabled) {
             System.out.println(message.toString());
+
+            System.out.println(message.getSiblings().get(0));
+            System.out.println(message.getSiblings().get(1));
+            System.out.println(message.getSiblings().get(2));
         }
 
         /*ChatHudLine.Visible vis = new ChatHudLine.Visible(0, message.asOrderedText(), indicator, true);
