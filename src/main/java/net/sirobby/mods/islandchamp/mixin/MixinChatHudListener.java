@@ -53,12 +53,12 @@ public abstract class MixinChatHudListener {
 
         visibleMessagesIguess.add(vis);*/
         if(IslandChamp.sidechat_enabled) {
+            int i = MathHelper.floor((double) this.getWidth() / this.getChatScale());
+            if (indicator != null && indicator.icon() != null) {
+                i -= indicator.icon().width + 4 + 2;
+            }
+            List<OrderedText> list = ChatMessages.breakRenderedChatMessageLines(message, i, this.client.textRenderer);
             if(/*Objects.equals(message.getStyle().getColor(), TextColor.fromRgb(0xFF7EFF)) && */Objects.equals(message.getSiblings().get(0).getString(), "[PM To] ") || Objects.equals(message.getSiblings().get(0).getString(), "[PM From] ")) {
-                int i = MathHelper.floor((double) this.getWidth() / this.getChatScale());
-                if (indicator != null && indicator.icon() != null) {
-                    i -= indicator.icon().width + 4 + 2;
-                }
-                List<OrderedText> list = ChatMessages.breakRenderedChatMessageLines(message, i, this.client.textRenderer);
                 boolean bl = this.isChatFocused();
                 for (int j = 0; j < list.size(); ++j) {
                     OrderedText orderedText = list.get(j);
