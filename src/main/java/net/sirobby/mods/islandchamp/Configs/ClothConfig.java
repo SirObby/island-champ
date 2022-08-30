@@ -42,10 +42,10 @@ public class ClothConfig {
 
         //boolean currentValue = true;
 
-        general.addEntry(entryBuilder.startBooleanToggle(Text.translatable("option.islandchamp.enabled"), IslandChamp.mod_enabled)
-                .setDefaultValue(true) // Recommended: Used when user click "Reset"
-                .setTooltip(Text.translatable("tooltip.islandchamp.enabled")) // Optional: Shown when the user hover over this option
-                .setSaveConsumer(newValue -> IslandChamp.mod_enabled = newValue) // Recommended: Called when user save the config
+        general.addEntry(entryBuilder.startBooleanToggle(Text.translatable("option.debugging.enabled"), IslandChamp.debugging_enabled)
+                .setDefaultValue(false) // Recommended: Used when user click "Reset"
+                .setTooltip(Text.translatable("tooltip.debugging.enabled")) // Optional: Shown when the user hover over this option
+                .setSaveConsumer(newValue -> IslandChamp.debugging_enabled = newValue) // Recommended: Called when user save the config
                 .build()); // Builds the option entry for cloth config
 
         Screen screen = builder.build();
@@ -60,7 +60,7 @@ public class ClothConfig {
 
         //String c = Files.readString(p);
 
-        JsonObject object = new Gson().fromJson(String.format("{ \"enabled\": %s}", IslandChamp.mod_enabled ), JsonObject.class);
+        JsonObject object = new Gson().fromJson(String.format("{ \"debugging_enabled\": %s}", IslandChamp.debugging_enabled ), JsonObject.class);
 
         Files.writeString(p, object.toString());
 
@@ -69,7 +69,7 @@ public class ClothConfig {
     public static void defaultConfigs() throws IOException {
         Path p = FabricLoader.getInstance().getConfigDir().resolve("islandchamp.json");
 
-        JsonObject object = new Gson().fromJson(String.format("{ \"enabled\": %s}", true ), JsonObject.class);
+        JsonObject object = new Gson().fromJson(String.format("{ \"debugging_enabled\": %s}", false ), JsonObject.class);
 
         Files.writeString(p, object.toString());
     }

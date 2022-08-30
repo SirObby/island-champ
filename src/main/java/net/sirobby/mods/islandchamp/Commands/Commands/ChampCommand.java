@@ -14,7 +14,7 @@ public class ChampCommand implements Command {
 
     @Override
     public void register_command(CommandDispatcher<FabricClientCommandSource> dispatcher) {
-        dispatcher.register(
+        /*dispatcher.register(
                 ClientCommandManager.literal("champ").executes(
                         ctx -> {
                             if (!IslandChamp.mod_enabled) {
@@ -40,6 +40,6 @@ public class ChampCommand implements Command {
                             return 0;
                         }
                 )
-        );
+        );*/
     }
 }

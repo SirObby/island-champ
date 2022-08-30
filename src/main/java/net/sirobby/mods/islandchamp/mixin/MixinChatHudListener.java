@@ -19,7 +19,7 @@ public class MixinChatHudListener {
 
     @Inject(method={"addMessage(Lnet/minecraft/text/Text;Lnet/minecraft/network/message/MessageSignatureData;ILnet/minecraft/client/gui/hud/MessageIndicator;Z)V"}, at = @At("HEAD"), cancellable = true)
     public void onChatMessage(Text message, MessageSignatureData signature, int ticks, MessageIndicator indicator, boolean refresh, CallbackInfo ci) {
-        if(IslandChamp.mod_enabled) {
+        if(IslandChamp.debugging_enabled) {
             System.out.println(message.toString());
         }
     }

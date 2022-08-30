@@ -23,7 +23,7 @@ public class IslandChamp implements ModInitializer {
 	public static final Logger LOGGER = LoggerFactory.getLogger("islandchamp");
 
 	// Settings
-	public static boolean mod_enabled = true; // Automatic enable.
+	public static boolean debugging_enabled = true; // Automatic enable.
 
 	@Override
 	public void onInitialize() {
@@ -43,11 +43,11 @@ public class IslandChamp implements ModInitializer {
 			if(!Files.exists(p)){
 				// Set default settings
 
-				mod_enabled = true;
+				debugging_enabled = true;
 
 				ClothConfig.saveConfigs();
 			} else {
-				mod_enabled = jsonObject.get("enabled").getAsBoolean();
+				debugging_enabled = jsonObject.get("debugging_enabled").getAsBoolean();
 			}
 
 		} catch (IOException e) {

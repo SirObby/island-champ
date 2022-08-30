@@ -3,7 +3,7 @@
 
   "category.islandchamp.general": "General Category",
 
-  "option.islandchamp.enabled": "Enable Island Champ",
+  "option.debugging.enabled": "Enable Debugging",
 
-  "tooltip.islandchamp.enabled": "Enables and/or disables the entire mod, bypasses other options."
+  "tooltip.debugging.enabled": "Debugging will send logs in your chat about incoming messages, used for development."
 }
