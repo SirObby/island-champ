@@ -5,7 +5,11 @@
 
   "option.debugging.enabled": "Enable Debugging",
   "option.sidechat.enabled": "Enable Sidechat",
+  "option.sidechatx.int": "Set the X axis of sidechat",
+  "option.sidechatw.int": "Set the width of the sidechat",
 
   "tooltip.debugging.enabled": "Debugging will send logs in your chat about incoming messages, used for development.",
-  "tooltip.sidechat.enabled": "Moves direct messages into a sidechat."
+  "tooltip.sidechat.enabled": "Moves direct messages into a sidechat.",
+  "tooltip.sidechatx.int": "Set the X axis of sidechat",
+  "tooltip.sidechatw.int": "Set the width of the sidechat"
 }

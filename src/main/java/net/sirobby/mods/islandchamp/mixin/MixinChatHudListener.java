@@ -40,33 +40,35 @@ public abstract class MixinChatHudListener {
     private boolean hasUnreadNewMessages;
 
     @Inject(method={"addMessage(Lnet/minecraft/text/Text;Lnet/minecraft/network/message/MessageSignatureData;ILnet/minecraft/client/gui/hud/MessageIndicator;Z)V"}, at = @At("HEAD"), cancellable = true)
-    public void onChatMessage(Text message, MessageSignatureData signature, int ticks, MessageIndicator indicator, boolean refresh, CallbackInfo ci) {
+    public void addMessage(Text message, MessageSignatureData signature, int ticks, MessageIndicator indicator, boolean refresh, CallbackInfo ci) {
         if(IslandChamp.debugging_enabled) {
             System.out.println(message.toString());
 
-            System.out.println(message.getSiblings().get(0).getString());
-            System.out.println(message.getSiblings().get(1).getString());
+            //System.out.println(message.getSiblings().get(0).getString());
+            //System.out.println(message.getSiblings().get(1).getString());
             //System.out.println(message.getSiblings().get(2).getString());
         }
 
-        System.out.println(IslandChamp.sidechat_enabled);
-        System.out.println(IslandChamp.debugging_enabled);
+        //System.out.println(IslandChamp.sidechat_enabled);
+        //System.out.println(IslandChamp.debugging_enabled);
 
         if(IslandChamp.sidechat_enabled) {
-            int i = MathHelper.floor((double) this.getWidth() / this.getChatScale());
-            if (indicator != null && indicator.icon() != null) {
-                i -= indicator.icon().width + 4 + 2;
-            }
-            List<OrderedText> list = ChatMessages.breakRenderedChatMessageLines(message, i, this.client.textRenderer);
-            if(/*Objects.equals(message.getStyle().getColor(), TextColor.fromRgb(0xFF7EFF)) && */message.getSiblings().get(0).getString().startsWith("[PM To] ") || message.getSiblings().get(0).getString().startsWith("[PM From] ")) {
-                boolean bl = this.isChatFocused();
+            //int i = MathHelper.floor((double) this.getWidth() / this.getChatScale());
+            //if (indicator != null && indicator.icon() != null) {
+            //    i -= indicator.icon().width + 4 + 2;
+            //}
+            //List<OrderedText> list = ChatMessages.breakRenderedChatMessageLines(message, i, this.client.textRenderer);
+            if(message.getSiblings().size() > 0) {
+                if (/*Objects.equals(message.getStyle().getColor(), TextColor.fromRgb(0xFF7EFF)) && */message.getSiblings().get(0).getString().startsWith("[PM To] ") || message.getSiblings().get(0).getString().startsWith("[PM From] ")) {
+                    boolean bl = this.isChatFocused();
 
-                //ChatHudLine.Visible vis = new ChatHudLine.Visible(0, message.asOrderedText(), indicator, bl);
+                    //ChatHudLine.Visible vis = new ChatHudLine.Visible(0, message.asOrderedText(), indicator, bl);
 
-                //visibleMessagesIguess.add(vis);
-                System.out.println("Sending the message to the side.");
-                visibleMessagesIguess.add(0, new ChatHudLine.Visible(this.client.inGameHud.getTicks(), message.asOrderedText(), indicator, true));
-                ci.cancel();
+                    //visibleMessagesIguess.add(vis);
+                    System.out.println("Sending the message to the side.");
+                    visibleMessagesIguess.add(0, new ChatHudLine.Visible(this.client.inGameHud.getTicks(), message.asOrderedText(), indicator, true));
+                    ci.cancel();
+                }
             }
         }
     }
@@ -132,6 +134,9 @@ public abstract class MixinChatHudListener {
                            int displayX, int width,
                            int scrolledLines) {
 
+        /*if(this.client.currentScreen != null) {
+            displayX = (int) (this.client.currentScreen.width - this.client.options.getChatWidth().getValue());
+        }*/
         int u;
         int t;
         int s;
