@@ -75,7 +75,7 @@ public class ClothConfig {
 
         //String c = Files.readString(p);
 
-        JsonObject object = new Gson().fromJson(String.format("{ \"debugging_enabled\": %s, \"sidechat\": %s, \"sidechat_x\": %d, \"sidechat_w\": %d }", IslandChamp.debugging_enabled,  IslandChamp.sidechat_enabled, IslandChamp.sidechat_x, IslandChamp.sidechat_w), JsonObject.class);
+        JsonObject object = new Gson().fromJson(String.format("{ \"v\": %d, \"debugging_enabled\": %s, \"sidechat\": %s, \"sidechat_x\": %d, \"sidechat_w\": %d }", IslandChamp.version, IslandChamp.debugging_enabled,  IslandChamp.sidechat_enabled, IslandChamp.sidechat_x, IslandChamp.sidechat_w), JsonObject.class);
 
         Files.writeString(p, object.toString());
 
@@ -84,7 +84,7 @@ public class ClothConfig {
     public static void defaultConfigs() throws IOException {
         Path p = FabricLoader.getInstance().getConfigDir().resolve("islandchamp.json");
 
-        JsonObject object = new Gson().fromJson(String.format("{ \"debugging_enabled\": %s \"sidechat\": %s, \"sidechat_x\": %d, \"sidechat_w\": %d }", false, true, 310, 90 ), JsonObject.class);
+        JsonObject object = new Gson().fromJson(String.format("{ \"v\": %d, \"debugging_enabled\": %s \"sidechat\": %s, \"sidechat_x\": %d, \"sidechat_w\": %d }", IslandChamp.version, false, true, 310, 90 ), JsonObject.class);
 
         Files.writeString(p, object.toString());
     }

@@ -3,6 +3,8 @@ package net.sirobby.mods.islandchamp;
 import com.google.gson.Gson;
 import com.google.gson.JsonObject;
 import net.fabricmc.api.ModInitializer;
+import net.fabricmc.fabric.api.networking.v1.ServerLoginConnectionEvents;
+import net.fabricmc.fabric.api.networking.v1.ServerLoginNetworking;
 import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.client.MinecraftClient;
 import net.sirobby.mods.islandchamp.Commands.CommandModule;
@@ -19,6 +21,9 @@ public class IslandChamp implements ModInitializer {
 	// It is considered best practice to use your mod id as the logger's name.
 	// That way, it's clear which mod wrote info, warnings, and errors.
 	public static final Logger LOGGER = LoggerFactory.getLogger("islandchamp");
+
+	public static final int version = 1;
+	// This is used to ensure that the config loader does not go out of bounds
 
 	// Settings
 	public static boolean debugging_enabled = false; // Automatic disable.
@@ -49,14 +54,33 @@ public class IslandChamp implements ModInitializer {
 
 				ClothConfig.saveConfigs();
 			} else {
-				debugging_enabled = jsonObject.get("debugging_enabled").getAsBoolean();
-				sidechat_enabled = jsonObject.get("sidechat").getAsBoolean();
-				sidechat_x = jsonObject.get("sidechat_x").getAsInt();
-				sidechat_w = jsonObject.get("sidechat_w").getAsInt();
+				if(jsonObject.has("v")) {
+					switch (jsonObject.get("v").getAsInt()) {
+						case 1: {
+							debugging_enabled = jsonObject.get("debugging_enabled").getAsBoolean();
+							sidechat_enabled = jsonObject.get("sidechat").getAsBoolean();
+							sidechat_x = jsonObject.get("sidechat_x").getAsInt();
+							sidechat_w = jsonObject.get("sidechat_w").getAsInt();
+						}
+						case 2: {
+							debugging_enabled = jsonObject.get("debugging_enabled").getAsBoolean();
+							sidechat_enabled = jsonObject.get("sidechat").getAsBoolean();
+							sidechat_x = jsonObject.get("sidechat_x").getAsInt();
+							sidechat_w = jsonObject.get("sidechat_w").getAsInt();
+
+							// Add websocket checks.
+						}
+					}
+				} else {
+					System.out.println(String.format("%s is out of date.", p.toString()));
+					debugging_enabled = jsonObject.get("debugging_enabled").getAsBoolean();
+					sidechat_enabled = jsonObject.get("sidechat").getAsBoolean();
+					sidechat_x = jsonObject.get("sidechat_x").getAsInt();
+					sidechat_w = jsonObject.get("sidechat_w").getAsInt();
+				}
 			}
 
 		} catch (IOException e) {
-
 			//throw new RuntimeException(e);
 		}
 	}
