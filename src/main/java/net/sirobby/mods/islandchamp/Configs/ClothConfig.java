@@ -63,10 +63,8 @@ public class ClothConfig {
                 .setSaveConsumer(newValue -> IslandChamp.sidechat_w = newValue) // Recommended: Called when user save the config
                 .build()); // Builds the option entry for cloth config
 
-        Screen screen = builder.build();
-
         //MinecraftClient.getInstance().setScreen(screen);
-        return screen;
+        return builder.build();
     }
 
     public static void saveConfigs() throws IOException {

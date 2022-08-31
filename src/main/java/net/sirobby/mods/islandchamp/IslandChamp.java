@@ -72,7 +72,7 @@ public class IslandChamp implements ModInitializer {
 						}
 					}
 				} else {
-					System.out.println(String.format("%s is out of date.", p.toString()));
+					System.out.printf("%s is out of date.%n", p);
 					debugging_enabled = jsonObject.get("debugging_enabled").getAsBoolean();
 					sidechat_enabled = jsonObject.get("sidechat").getAsBoolean();
 					sidechat_x = jsonObject.get("sidechat_x").getAsInt();
