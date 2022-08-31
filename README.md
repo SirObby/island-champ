@@ -1,5 +1,8 @@
 # Island Champ
 
+## Code written by others
+- Websocket code is mostly written by SuperDerp111 in their mod [SUSMOD](https://github.com/SirObby/susmod)
+- MixinChatHudListener includes alot of code from ChatHud.java for the sidechat.
 
 ## Features
 ### Implemented
