@@ -53,20 +53,27 @@ public abstract class MixinChatHudListener {
         //System.out.println(IslandChamp.debugging_enabled);
 
         if(IslandChamp.sidechat_enabled) {
-            //int i = MathHelper.floor((double) this.getWidth() / this.getChatScale());
-            //if (indicator != null && indicator.icon() != null) {
-            //    i -= indicator.icon().width + 4 + 2;
-            //}
-            //List<OrderedText> list = ChatMessages.breakRenderedChatMessageLines(message, i, this.client.textRenderer);
+            int i = MathHelper.floor((double)this.getWidth() / this.getChatScale());
+            List<OrderedText> list = ChatMessages.breakRenderedChatMessageLines(message, i, this.client.textRenderer);
             if(message.getSiblings().size() > 0) {
                 if (/*Objects.equals(message.getStyle().getColor(), TextColor.fromRgb(0xFF7EFF)) && */message.getSiblings().get(0).getString().startsWith("[PM To] ") || message.getSiblings().get(0).getString().startsWith("[PM From] ")) {
                     boolean bl = this.isChatFocused();
 
                     //ChatHudLine.Visible vis = new ChatHudLine.Visible(0, message.asOrderedText(), indicator, bl);
 
+                    for (int j = 0; j < list.size(); ++j) {
+                        OrderedText orderedText = list.get(j);
+                        if (bl && this.scrolledLines > 0) {
+                            this.hasUnreadNewMessages = true;
+                            this.scroll(1);
+                        }
+                        boolean bl2 = j == list.size() - 1;
+                        this.visibleMessagesIguess.add(0, new ChatHudLine.Visible(ticks, orderedText, indicator, bl2));
+                    }
+
                     //visibleMessagesIguess.add(vis);
-                    System.out.println("Sending the message to the side.");
-                    visibleMessagesIguess.add(0, new ChatHudLine.Visible(this.client.inGameHud.getTicks(), message.asOrderedText(), indicator, true));
+                    //System.out.println("Sending the message to the side.");
+                    //visibleMessagesIguess.add(0, new ChatHudLine.Visible(this.client.inGameHud.getTicks(), message.asOrderedText(), indicator, true));
                     ci.cancel();
                 }
             }
