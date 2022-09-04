@@ -39,7 +39,7 @@ public class IslandChamp implements ModInitializer {
 
 		new CommandModule().init(mc);
 		// new WebsocketModule().init(mc);
-		// Sockets crash real client for some reaosn
+		// Sockets crash real client for some reason
 
 		try {
 			Path p = FabricLoader.getInstance().getConfigDir().resolve("islandchamp.json");
