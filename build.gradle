@@ -30,6 +30,7 @@ dependencies {
 
 	implementation 'org.java-websocket:Java-WebSocket:1.5.1'
 	modImplementation 'org.java-websocket:Java-WebSocket:1.5.1'
+	include 'org.java-websocket:Java-WebSocket:1.5.1'
 
 	// Fabric API. This is technically optional, but you probably want it anyway.
 	modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
