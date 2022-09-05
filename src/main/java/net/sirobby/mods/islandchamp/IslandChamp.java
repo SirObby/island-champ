@@ -7,6 +7,7 @@ import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.client.MinecraftClient;
 import net.sirobby.mods.islandchamp.Commands.CommandModule;
 import net.sirobby.mods.islandchamp.Configs.ClothConfig;
+import net.sirobby.mods.islandchamp.Keybinds.KeybindModule;
 import net.sirobby.mods.islandchamp.Websocket.WebsocketModule;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -40,6 +41,7 @@ public class IslandChamp implements ModInitializer {
 		new CommandModule().init(mc);
 		// new WebsocketModule().init(mc);
 		// Sockets crash real client for some reason
+		new KeybindModule().init(mc);
 
 		try {
 			Path p = FabricLoader.getInstance().getConfigDir().resolve("islandchamp.json");
