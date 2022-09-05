@@ -8,7 +8,8 @@
   ],
   "client": [
     "MixinBossBarListener",
-    "MixinChatHudListener"
+    "MixinChatHudListener",
+    "MixinPlayerListHud"
   ],
   "injectors": {
     "defaultRequire": 1

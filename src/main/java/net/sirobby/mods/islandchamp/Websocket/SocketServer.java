@@ -54,6 +54,6 @@ public class SocketServer extends WebSocketClient {
     }
 
     public static boolean hasUser(String user) {
-        return users.toString().contains("\"username\":\""+user+"\"");
+        return users.toString().contains(user);
     }
 }
