@@ -7,7 +7,6 @@
 ## Features
 ### Implemented
 
-- Debugging mode (Sends Text components in logs.)
 - Sidechat for PMs
 - Keybinds to leave the queue, open the party gui and open the friends gui.
 - Indicator for those using island-champ
