@@ -4,7 +4,8 @@
   "package": "net.sirobby.mods.islandchamp.mixin",
   "compatibilityLevel": "JAVA_17",
   "mixins": [
-    "MixinContainerListener"
+    "MixinContainerListener",
+    "MixinInGameHud"
   ],
   "client": [
     "MixinBossBarListener",
