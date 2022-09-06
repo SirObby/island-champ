@@ -5,11 +5,12 @@ import net.fabricmc.loader.api.FabricLoader;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.Collections;
+import java.util.LinkedList;
 import java.util.List;
 
 public class Configurator {
 
-    private List<ConfigCategory> Categories = Collections.emptyList();
+    private List<ConfigCategory> Categories = new LinkedList<ConfigCategory>() ;// = Collections.emptyList();
     private Path configPath;
 
     public Configurator(String configfile) {
@@ -21,7 +22,10 @@ public class Configurator {
     public void done() {
         if(Files.exists(configPath)) {
             for ( ConfigCategory cat : Categories ) {
-
+                for ( ConfigOption opshun : cat.cfg_options ) {
+                    // we get every goddamn option.
+                    System.out.println(opshun.optionName);
+                }
             }
         } else {
 

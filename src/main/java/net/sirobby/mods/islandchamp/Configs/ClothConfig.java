@@ -53,11 +53,11 @@ public class ClothConfig {
                 .setSaveConsumer(newValue -> IslandChamp.debugging_enabled = newValue) // Recommended: Called when user save the config
                 .build()); // Builds the option entry for cloth config
 
-        advanced.addEntry(entryBuilder.startBooleanToggle(Text.translatable("option.configurator.enabled"), IslandChamp.debugging_enabled)
+        /*advanced.addEntry(entryBuilder.startBooleanToggle(Text.translatable("option.configurator.enabled"), IslandChamp.debugging_enabled)
                 .setDefaultValue(false) // Recommended: Used when user click "Reset"
                 .setTooltip(Text.translatable("tooltip.configurator.enabled")) // Optional: Shown when the user hover over this option
                 .setSaveConsumer(newValue -> IslandChamp.debugging_enabled = newValue) // Recommended: Called when user save the config
-                .build()); // Builds the option entry for cloth config
+                .build()); // Builds the option entry for cloth config*/
 
         sidechat.addEntry(entryBuilder.startIntSlider(Text.translatable("option.sidechatx.int"), IslandChamp.sidechat_x, 1, 1920)
                 .setDefaultValue(310) // Recommended: Used when user click "Reset"
