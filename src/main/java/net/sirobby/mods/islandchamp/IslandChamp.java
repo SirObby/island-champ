@@ -102,5 +102,7 @@ public class IslandChamp implements ModInitializer {
 
 		cfg.add_category(new ConfigCategory("General Options", List.of(new ConfigOption(ConfigTypes.Boolean_Option, "sidechat", BooleanConfigOption.class))));
 
+		cfg.done();
+
 	}
 }
