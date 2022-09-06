@@ -2,11 +2,14 @@
   "title.islandchamp.config": "Island Champ title.",
 
   "category.islandchamp.general": "General Category",
+  "category.islandchamp.advanced": "Advanced Category",
+  "category.islandchamp.sidechat": "Sidechat Category",
 
   "option.debugging.enabled": "Enable Debugging",
   "option.sidechat.enabled": "Enable Sidechat",
   "option.sidechatx.int": "Set the X axis of sidechat",
   "option.sidechatw.int": "Set the width of the sidechat",
+  "option.configurator.enabled": "Enable experimental configurator config manager.",
 
   "tooltip.debugging.enabled": "Debugging will send logs in your chat about incoming messages, used for development.",
   "tooltip.sidechat.enabled": "Moves direct messages into a sidechat.",
