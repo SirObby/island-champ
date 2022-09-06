@@ -24,7 +24,7 @@ public class UpdatePartyMembersCommand implements Command {
                         .then(ClientCommandManager.literal("add").then(
                                 ClientCommandManager.argument("player", StringArgumentType.greedyString()).executes(
                                         ctx -> {
-
+                                                IslandChamp.party_members.add(ctx.getArgument("player", String.class));
                                             return 0;
                                         }
                                 )
