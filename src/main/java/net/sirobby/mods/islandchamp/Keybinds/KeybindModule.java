@@ -69,6 +69,5 @@ public class KeybindModule extends Module {
                 client.player.sendCommand("fr");
             }
         });
-
     }
 }

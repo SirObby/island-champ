@@ -3,13 +3,14 @@
 ## Code written by others
 - Websocket code is mostly written by SuperDerp111 in their mod [SUSMOD](https://github.com/SirObby/susmod)
 - MixinChatHudListener includes alot of code from ChatHud.java for the sidechat.
-- Keybinds to leave the queue, open the party gui and open the friends gui.
 
 ## Features
 ### Implemented
 
 - Debugging mode (Sends Text components in logs.)
 - Sidechat for PMs
+- Keybinds to leave the queue, open the party gui and open the friends gui.
+
 ### Planned
 
 - Show party members on screen

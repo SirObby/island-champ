@@ -15,6 +15,8 @@ import org.slf4j.LoggerFactory;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.util.Collections;
+import java.util.List;
 
 public class IslandChamp implements ModInitializer {
 	// This logger is used to write text to the console and the log file.
@@ -31,6 +33,8 @@ public class IslandChamp implements ModInitializer {
 
 	public static int sidechat_x = 310; // test?
 	public static int sidechat_w = 90;
+
+	public static List<String> party_members = Collections.emptyList();
 
 	@Override
 	public void onInitialize() {
