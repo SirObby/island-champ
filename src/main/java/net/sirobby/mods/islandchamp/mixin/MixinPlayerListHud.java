@@ -29,6 +29,12 @@ public class MixinPlayerListHud {
                     s = s.withColor(TextColor.fromRgb(1481885));
                     cir.setReturnValue(entry.getDisplayName().copy().append(Text.of("★").copy().setStyle(s)));
                 }
+                // If you're a contributor, you can change add your name.
+                if(entry.getDisplayName().getString().substring(3).equals("SirObby_") || entry.getDisplayName().getString().substring(3).equals("DarkCheese_")) {
+                    Style s = Style.EMPTY;
+                    s = s.withColor(TextColor.fromRgb(11141290));
+                    cir.setReturnValue(entry.getDisplayName().copy().append(Text.of("★").copy().setStyle(s)));
+                }
             }
         }
     }
