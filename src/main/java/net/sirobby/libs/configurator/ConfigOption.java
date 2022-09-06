@@ -15,7 +15,7 @@ public class ConfigOption {
     }
 
     public void translateText(String seriously) {
-        translateableText = seriously;
+        translateText = seriously;
     }
 
 }
