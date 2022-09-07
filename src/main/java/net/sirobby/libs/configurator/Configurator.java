@@ -14,7 +14,9 @@ import java.util.List;
 
 public class Configurator {
 
+    @SuppressWarnings("all")
     private List<ConfigCategory> Categories = new LinkedList<ConfigCategory>() ;// = Collections.emptyList();
+    @SuppressWarnings("all")
     private Path configPath;
 
     public Configurator(String configfile) {
@@ -23,6 +25,7 @@ public class Configurator {
 
     }
 
+    @SuppressWarnings("all")
     public void done() {
         if(Files.exists(configPath)) {
             for ( ConfigCategory cat : Categories ) {
