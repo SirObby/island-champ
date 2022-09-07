@@ -15,6 +15,8 @@ public class KeybindModule extends Module {
     @Override
     public void init(MinecraftClient mc) {
 
+        //TODO: toggle chat(local or party) keybind but this requires to see if party chat is on or not.
+
         KeyBinding LeaveQueue; //the leavequeue command
         KeyBinding PartyCommand; //the party command
         KeyBinding FriendCommand; //the friendlist command
