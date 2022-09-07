@@ -9,7 +9,8 @@ public class ConfigCategory {
     public String name;
     public List<ConfigOption> cfg_options;// = new LinkedList<ConfigOption>();
 
-    public ConfigCategory (String name, List<ConfigOption> options) {
+    public ConfigCategory (String set_name, List<ConfigOption> options) {
+        name = set_name;
         cfg_options = options;
     }
 

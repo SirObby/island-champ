@@ -96,13 +96,13 @@ public class IslandChamp implements ModInitializer {
 			//throw new RuntimeException(e);
 		}
 
-		// Experimental Configurator config.
+		// TODO: Finish configurator.
 
-		/*Configurator cfg = new Configurator("new-islandchamp");
+		Configurator cfg = new Configurator("new-islandchamp");
 
-		cfg.add_category(new ConfigCategory("General Options", List.of(new ConfigOption(ConfigTypes.Boolean_Option, "sidechat", BooleanConfigOption.class))));
+		cfg.add_category(new ConfigCategory("General Options", List.of(new ConfigOption(ConfigTypes.Boolean_Option, "sidechat", BooleanConfigOption.class).set_default(true))));
 
-		cfg.done();*/
+		cfg.done();
 
 	}
 }
