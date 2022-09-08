@@ -4,6 +4,12 @@ import com.google.gson.Gson;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import net.fabricmc.loader.api.FabricLoader;
+import net.minecraft.client.MinecraftClient;
+import net.minecraft.client.gui.screen.Screen;
+import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.item.ItemStack;
+import net.minecraft.screen.ScreenHandler;
+import net.minecraft.text.Text;
 
 import java.io.IOException;
 import java.nio.file.Files;
@@ -13,6 +19,8 @@ import java.util.LinkedList;
 import java.util.List;
 
 public class Configurator {
+
+    private JsonObject configuration = new JsonObject();
 
     @SuppressWarnings("all")
     private List<ConfigCategory> Categories = new LinkedList<ConfigCategory>() ;// = Collections.emptyList();
@@ -28,12 +36,12 @@ public class Configurator {
     @SuppressWarnings("all")
     public void done() {
         if(Files.exists(configPath)) {
-            for ( ConfigCategory cat : Categories ) {
-                for ( ConfigOption opshun : cat.cfg_options ) {
-                    // we get every goddamn option.
-                    System.out.println(opshun.optionName);
-
-                }
+            try {
+                // yes, the loading is much simpler than the forking default value.
+                String c = Files.readString(configPath);
+                configuration = new Gson().fromJson(c, JsonObject.class);
+            } catch (IOException e) {
+                e.printStackTrace();
             }
         } else {
             JsonObject o = new Gson().fromJson("{ \"configurator\": true }", JsonObject.class);
