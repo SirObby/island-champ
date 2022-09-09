@@ -77,28 +77,27 @@ public abstract class MixinChatHudListener {
                     //visibleMessagesIguess.add(0, new ChatHudLine.Visible(this.client.inGameHud.getTicks(), message.asOrderedText(), indicator, true));
                     ci.cancel();
                 }
+                if(IslandChamp.sidechat_party_enabled) {
+                    if(message.getSiblings().get(0).getString().startsWith("[Party]")) {
+                        boolean bl = this.isChatFocused();
 
-            }
-            if(IslandChamp.sidechat_party_enabled) {
-                if(message.getSiblings().get(0).getString().startsWith("[Party]")) {
-                    boolean bl = this.isChatFocused();
+                        //ChatHudLine.Visible vis = new ChatHudLine.Visible(0, message.asOrderedText(), indicator, bl);
 
-                    //ChatHudLine.Visible vis = new ChatHudLine.Visible(0, message.asOrderedText(), indicator, bl);
-
-                    for (int j = 0; j < list.size(); ++j) {
-                        OrderedText orderedText = list.get(j);
-                        if (bl && this.scrolledLines > 0) {
-                            this.hasUnreadNewMessages = true;
-                            this.scroll(1);
+                        for (int j = 0; j < list.size(); ++j) {
+                            OrderedText orderedText = list.get(j);
+                            if (bl && this.scrolledLines > 0) {
+                                this.hasUnreadNewMessages = true;
+                                this.scroll(1);
+                            }
+                            boolean bl2 = j == list.size() - 1;
+                            this.visibleMessagesIguess.add(0, new ChatHudLine.Visible(ticks, orderedText, indicator, bl2));
                         }
-                        boolean bl2 = j == list.size() - 1;
-                        this.visibleMessagesIguess.add(0, new ChatHudLine.Visible(ticks, orderedText, indicator, bl2));
-                    }
 
-                    //visibleMessagesIguess.add(vis);
-                    //System.out.println("Sending the message to the side.");
-                    //visibleMessagesIguess.add(0, new ChatHudLine.Visible(this.client.inGameHud.getTicks(), message.asOrderedText(), indicator, true));
-                    ci.cancel();
+                        //visibleMessagesIguess.add(vis);
+                        //System.out.println("Sending the message to the side.");
+                        //visibleMessagesIguess.add(0, new ChatHudLine.Visible(this.client.inGameHud.getTicks(), message.asOrderedText(), indicator, true));
+                        ci.cancel();
+                    }
                 }
             }
         }
