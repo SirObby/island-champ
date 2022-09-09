@@ -9,7 +9,7 @@
   "option.sidechat.enabled": "Enable Sidechat",
   "option.sidechatx.int": "Set the X axis of sidechat",
   "option.sidechatw.int": "Set the width of the sidechat",
-  "option.configurator.enabled": "Enable experimental configurator config manager.",
+  "option.sidechat.party.enabled": "Send party messages into the side chat.",
 
   "tooltip.debugging.enabled": "Debugging will send logs in your chat about incoming messages, used for development.",
   "tooltip.sidechat.enabled": "Moves direct messages into a sidechat.",

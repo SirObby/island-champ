@@ -31,6 +31,8 @@ public class IslandChamp implements ModInitializer {
 	public static boolean debugging_enabled = false; // Automatic disable.
 	public static boolean sidechat_enabled = true; // Automatic enable.
 
+	public static boolean sidechat_party_enabled = false; // Automatic disnable.
+
 	public static int sidechat_x = 310; // test?
 	public static int sidechat_w = 90;
 
@@ -72,6 +74,7 @@ public class IslandChamp implements ModInitializer {
 						case 2: {
 							debugging_enabled = jsonObject.get("debugging_enabled").getAsBoolean();
 							sidechat_enabled = jsonObject.get("sidechat").getAsBoolean();
+							sidechat_party_enabled = jsonObject.get("sidechat_party").getAsBoolean();
 							sidechat_x = jsonObject.get("sidechat_x").getAsInt();
 							sidechat_w = jsonObject.get("sidechat_w").getAsInt();
 

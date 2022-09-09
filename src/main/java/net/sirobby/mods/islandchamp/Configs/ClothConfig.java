@@ -71,6 +71,12 @@ public class ClothConfig {
                 .setSaveConsumer(newValue -> IslandChamp.sidechat_w = newValue) // Recommended: Called when user save the config
                 .build()); // Builds the option entry for cloth config
 
+        sidechat.addEntry(entryBuilder.startBooleanToggle(Text.translatable("option.sidechat.party.enabled"), IslandChamp.sidechat_party_enabled)
+                .setDefaultValue(false) // Recommended: Used when user click "Reset"
+                .setTooltip(Text.translatable("tooltip.sidechat.party.enabled")) // Optional: Shown when the user hover over this option
+                .setSaveConsumer(newValue -> IslandChamp.sidechat_party_enabled = newValue) // Recommended: Called when user save the config
+                .build()); // Builds the option entry for cloth config
+
         //MinecraftClient.getInstance().setScreen(screen);
         return builder.build();
     }
@@ -81,7 +87,7 @@ public class ClothConfig {
 
         //String c = Files.readString(p);
 
-        JsonObject object = new Gson().fromJson(String.format("{ \"v\": %d, \"debugging_enabled\": %s, \"sidechat\": %s, \"sidechat_x\": %d, \"sidechat_w\": %d }", IslandChamp.version, IslandChamp.debugging_enabled,  IslandChamp.sidechat_enabled, IslandChamp.sidechat_x, IslandChamp.sidechat_w), JsonObject.class);
+        JsonObject object = new Gson().fromJson(String.format("{ \"v\": %d, \"debugging_enabled\": %s, \"sidechat\": %s, \"sidechat_x\": %d, \"sidechat_w\": %d, \"sidechat_party\": %s }", IslandChamp.version, IslandChamp.debugging_enabled,  IslandChamp.sidechat_enabled, IslandChamp.sidechat_x, IslandChamp.sidechat_w, IslandChamp.sidechat_party_enabled), JsonObject.class);
 
         Files.writeString(p, object.toString());
 
@@ -90,7 +96,7 @@ public class ClothConfig {
     public static void defaultConfigs() throws IOException {
         Path p = FabricLoader.getInstance().getConfigDir().resolve("islandchamp.json");
 
-        JsonObject object = new Gson().fromJson(String.format("{ \"v\": %d, \"debugging_enabled\": %s \"sidechat\": %s, \"sidechat_x\": %d, \"sidechat_w\": %d }", IslandChamp.version, false, true, 310, 90 ), JsonObject.class);
+        JsonObject object = new Gson().fromJson(String.format("{ \"v\": %d, \"debugging_enabled\": %s \"sidechat\": %s, \"sidechat_x\": %d, \"sidechat_w\": %d, \"sidechat_party\": %s }", IslandChamp.version, false, true, 310, 90, false ), JsonObject.class);
 
         Files.writeString(p, object.toString());
     }
