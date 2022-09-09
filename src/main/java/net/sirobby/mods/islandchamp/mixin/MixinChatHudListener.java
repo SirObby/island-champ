@@ -140,6 +140,7 @@ public abstract class MixinChatHudListener {
     @Shadow
     protected abstract void drawIndicatorIcon(MatrixStack matrices, int x, int y, MessageIndicator.Icon icon);
 
+    @SuppressWarnings("all")
     @Inject(method={"render"}, at = @At("HEAD"), cancellable = true)
     public void render(MatrixStack matrices, int currentTick, CallbackInfo ci) {
         renderChat(matrices, currentTick, IslandChamp.sidechat_x, IslandChamp.sidechat_w, 90);
@@ -160,7 +161,7 @@ public abstract class MixinChatHudListener {
         }*/
     }
 
-    @SuppressWarnings("deprecation")
+    @SuppressWarnings("all")
     private void renderChat(MatrixStack matrices, int currentTick,
                            int displayX, int width,
                            int scrolledLines) {
