@@ -5,11 +5,6 @@ import com.google.gson.JsonObject;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.client.MinecraftClient;
-import net.sirobby.libs.configurator.ConfigCategory;
-import net.sirobby.libs.configurator.ConfigOption;
-import net.sirobby.libs.configurator.ConfigTypes;
-import net.sirobby.libs.configurator.Configurator;
-import net.sirobby.libs.configurator.Types.BooleanConfigOption;
 import net.sirobby.mods.islandchamp.Commands.CommandModule;
 import net.sirobby.mods.islandchamp.Configs.ClothConfig;
 import net.sirobby.mods.islandchamp.Keybinds.KeybindModule;
@@ -95,14 +90,6 @@ public class IslandChamp implements ModInitializer {
 		} catch (IOException e) {
 			//throw new RuntimeException(e);
 		}
-
-		// TODO: Finish configurator.
-
-		Configurator cfg = new Configurator("new-islandchamp");
-
-		cfg.add_category(new ConfigCategory("General Options", List.of(new ConfigOption(ConfigTypes.Boolean_Option, "sidechat", BooleanConfigOption.class).set_default(true))));
-
-		cfg.done();
 
 	}
 }
