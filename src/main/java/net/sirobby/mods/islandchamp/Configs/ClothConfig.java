@@ -23,6 +23,7 @@ public class ClothConfig {
         ConfigBuilder builder = ConfigBuilder.create()
                 .setParentScreen(mc.currentScreen)
                 .setTitle(Text.translatable("title.islandchamp.config"))
+                .setTransparentBackground(true)
                 .setSavingRunnable(
                         () -> {
                             try {

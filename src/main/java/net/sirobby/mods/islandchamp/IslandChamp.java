@@ -31,7 +31,7 @@ public class IslandChamp implements ModInitializer {
 	public static boolean debugging_enabled = false; // Automatic disable.
 	public static boolean sidechat_enabled = true; // Automatic enable.
 
-	public static boolean sidechat_party_enabled = false; // Automatic disnable.
+	public static boolean sidechat_party_enabled = false; // Automatic disable.
 
 	public static int sidechat_x = 310; // test?
 	public static int sidechat_w = 90;
