@@ -15,6 +15,5 @@
 
 - Show party members on screen
 - Notification when friend joins
-- Block queueing for 5 minutes if you disconnect from Battle Box or Sky Battle.
 - Indicator for your friends.
 - Voice Chat for party members. (For those using the mod.)
