@@ -13,7 +13,7 @@ public class CommandModule extends Module {
         ClientCommandRegistrationCallback.EVENT.register((dispatcher, registryAccess) -> {
 
             new UpdatePartyMembersCommand().register_command(dispatcher);
-            new ListModUsersCommand().register_command(dispatcher);
+            //new ListModUsersCommand().register_command(dispatcher);
         });
 
     }
