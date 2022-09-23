@@ -45,7 +45,7 @@ public class IslandChamp implements ModInitializer {
 		MinecraftClient mc = MinecraftClient.getInstance();
 
 		new CommandModule().init(mc);
-		new WebsocketModule().init(mc);
+		//new WebsocketModule().init(mc);
 		// Sockets crash real client for some reason
 		new KeybindModule().init(mc);
 
