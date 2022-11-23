@@ -1,0 +1,18 @@
+{
+  "title.islandchamp.config": "Island Champ cím.",
+
+  "category.islandchamp.general": "Általános Kategória",
+  "category.islandchamp.advanced": "Haladó Kategória",
+  "category.islandchamp.sidechat": "Oldalsó Chat Kategória",
+
+  "option.debugging.enabled": "Hibakeresés engedélyezése (Debugging)",
+  "option.sidechat.enabled": "Oldalsó Chat engedélyezése",
+  "option.sidechatx.int": "Az Oldalsó Chat X tengelyének beállítása",
+  "option.sidechatw.int": "Az Oldalsó Chat szélességének beállítása",
+  "option.sidechat.party.enabled": "Küldjön Party üzeneteket az Oldalsó Chatbe.",
+
+  "tooltip.debugging.enabled": "A hibakeresés naplókat küld a chatben a bejövő üzenetekről, a fejlesztéshez használják.",
+  "tooltip.sidechat.enabled": "Közvetlen üzenetek áthelyezése egy Oldalsó Chatbe.",
+  "tooltip.sidechatx.int": "Az Oldalsó Chat X tengelyének beállítása",
+  "tooltip.sidechatw.int": "Az oldalsó Chat szélességének beállítása"
+}
